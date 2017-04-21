@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Личный сайт Карпова Максима</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var correctAnswersCount;
+        function askQuestion(textBoxId, answer) {
+            var userAnswer = document.getElementById(textBoxId).value;
+            if (userAnswer == answer) {
+                correctAnswersCount++;
+            }
+        }
+
+        function playPuzzle() {
+            correctAnswersCount = 0;
+            askQuestion("userAnswer1", "елка");
+            askQuestion("userAnswer1", "ёлка");
+            askQuestion("userAnswer2", "капуста");
+            alert("Количество правильных ответов: " + correctAnswersCount);
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <div id="header">
+            <a href="index.html">Главная</a> <span>/</span>
+            <a href="puzzle.html">Загадки</a> <span>/</span>
+            <a href="guess-1.html">Угадайка на одного</a> <span>/</span>
+            <a href="guess-2.html">Угадайка мультиплеер</a>
+        </div>
+        <h1>Личный сайт Карпова Максима</h1>
+        <div id="center"> 
+            <h1>Игра в загадки</h1>
+            <div id="box">
+                <p>Зимой и летом одним цветом.</p>
+                <input type="text" id="userAnswer1">
+                <p>Сто одежек и все без застежек.</p>
+                <input type="text" id="userAnswer2">
+                <br/><br/>
+                <a href="#" onclick="playPuzzle();">Ответить</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">Copyright © 2017 <a href="#" target="_blank">GRABBING</a></div>
+</body>
+</html>
